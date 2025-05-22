@@ -16,8 +16,8 @@
 			<Scene />
 		</Canvas>
 	</div>
-	<div id="logo" class="block top-0 left-0 w-screen h-screen -z-1">
-		<img src={logo} alt="Logo" class="w-full" />
+	<div id="logo" class="flex absolute top-0 left-0 w-screen h-screen -z-1 justify-center items-center">
+		<img src={logo} alt="Logo" class="w-1/2" />
 	</div>
 </div>
 
