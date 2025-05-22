@@ -5,8 +5,6 @@
 		ShaderMaterial,
 		Clock,
 		PlaneGeometry,
-		OrthographicCamera,
-		Color,
 	} from "three";
 	import { Vector2, Vector3, Vector4 } from "three";
 
@@ -17,20 +15,26 @@
 	let iResolution = new Vector2($size.width, $size.height);
 	let iTime = 0;
 
+	$: {
+		console.log("iResolution", iResolution);
+	}
+	
+	// --- CHANGE THESE VALUES TO CHANGE THE EFFECT ---
 	let SPIN_ROTATION = 0.0;
 	let SPIN_SPEED = 7.0;
-	let OFFSET = new Vector2(0, 0);
+	let OFFSET = new Vector2(0.4, 0.25);
 	// SCULIO COLOUR PALETTE
 	// wavy cream: 214, 191, 140
 	// swampy green: 64, 80, 83
 	// border brown: 72, 36, 36
-	let COLOUR_1 = new Vector4(214 / 255, 191 / 255, 140 / 255, 1.0);
-	let COLOUR_2 = new Vector4(64 / 255, 80 / 255, 83 / 255, 1.0);
-	let COLOUR_3 = new Vector4(72 / 255, 36 / 255, 36 / 255, 1.0);
-	let CONTRAST = 4.5; // default: 3.5
+	// The values below are divided by 255 to normalize them to [0, 1], which is how the shader expects them.
+	let COLOUR_1 = new Vector4(72 / 255, 36 / 255, 36 / 255, 1.0);
+	let COLOUR_2 = new Vector4(214/ 255, 191 / 255, 140 / 255, 1.0);
+	let COLOUR_3 = new Vector4(64 / 255, 80 / 255, 83 / 255, 1.0);
+	let CONTRAST = 2.5; // default: 3.5
 	let LIGHTING = 0.4;
-	let AMOUNT = 0.25; // default: 0.25
-	let PIXEL_FILTER = 745.0;
+	let AMOUNT = 0.20; // default: 0.25
+	let PIXEL_FILTER = 845.0;
 	let SPIN_EASE = 1.0;
 	const PI = 3.14159265359;
 	let IS_ROTATE = false;
@@ -71,7 +75,7 @@
 			fragmentShader: fragmentShader,
 			side: 2,
 		});
-		iResolution.set($size.width, $size.height);
+		iResolution.set($size.width, $size.height); //FIX: This might not be working? Double check if the size is being set correctly on mount.
 		backgroundMaterial.uniforms.iResolution.value = iResolution;
 	});
 
@@ -167,11 +171,24 @@
 		backgroundMaterial.uniforms.SPIN_EASE.value = SPIN_EASE;
 	}
 
-	$: {
-		if (
-			$size.width !== iResolution.x ||
-			$size.height !== iResolution.y
-		) {
+	// Update iResolution when the size changes
+	// $: {
+	// 	if (
+	// 		$size.width !== iResolution.x ||
+	// 		$size.height !== iResolution.y
+	// 	) {
+	// 		iResolution.set($size.width, $size.height);
+	// 		// This is only needed if backgroundMaterial exists already
+	// 		if (backgroundMaterial) {
+	// 			backgroundMaterial.uniforms.iResolution.value =
+	// 				iResolution;
+	// 		}
+	// 	}
+	// }
+
+	$ : {
+		if(
+		$size.height !== iResolution.y || $size.width !== iResolution.x){
 			iResolution.set($size.width, $size.height);
 			// This is only needed if backgroundMaterial exists already
 			if (backgroundMaterial) {
