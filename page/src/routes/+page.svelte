@@ -17,7 +17,7 @@
 		</Canvas>
 	</div>
 	<div id="logo" class="flex absolute top-0 left-0 w-screen h-screen -z-1 justify-center items-center">
-		<img src={logo} alt="Logo" class="w-1/2" />
+		<img src={logo} alt="Logo" class="w-5/8" />
 	</div>
 </div>
 
