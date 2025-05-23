@@ -1,0 +1,35 @@
+
+[
+    {
+        "name": "Ace",
+        "path": "assets/3d-cards/ace.png"
+    },
+    {
+        "name": "Fail",
+        "path": "assets/3d-cards/fail.png"
+    },
+    {
+        "name": "King",
+        "path": "assets/3d-cards/king.png"
+    },
+    {
+        "name": "Queen",
+        "path": "assets/3d-cards/queen.png"
+    },
+    {
+        "name": "Jack",
+        "path": "assets/3d-cards/jack.png"
+    },
+    {
+        "name": "Mad",
+        "path": "assets/3d-cards/mad.png"
+    },
+    {
+        "name": "Pyro",
+        "path": "assets/3d-cards/pyro.png"
+    },
+    {
+        "name": "Rorschach",
+        "path": "assets/3d-cards/rorschach.png"
+    }
+]
