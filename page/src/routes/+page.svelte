@@ -41,7 +41,7 @@
 		</Canvas>
 	</div>
 	<div id="logo" class="flex absolute top-0 left-0 w-screen h-screen -z-1 justify-center items-center flex-col -gap-3">
-		<img src={logo} alt="Logo" class="w-5/8" bind:this={logo_element}/>
+		<img src={logo} alt="Logo" class="w-1/2" bind:this={logo_element}/>
 		<!-- translating manually may not accomadate all screen sizes -->
 		<img src={small_logo} alt="Sculio" class="w-1/6 transform-[translate(0,-70px)] " bind:this={small_logo_element}/>
 	</div>
