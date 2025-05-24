@@ -1,6 +1,2 @@
 @import 'tailwindcss';
 
-@font-face {
-    font-family: 'balatro';
-    src: url('./fonts/balatro.otf') format('opentype');
-}
