@@ -1,35 +1,74 @@
-
-[
-    {
+{
+    "ace.png" :{
         "name": "Ace",
-        "path": "assets/3d-cards/ace.png"
+        "path": "assets/3d-cards/ace.png",
+        
+        "x": 1500,
+        "y": 300,
+        "scale": 1,
+        "rotation": 0
     },
-    {
+    "fail.png":{
         "name": "Fail",
-        "path": "assets/3d-cards/fail.png"
+        "path": "assets/3d-cards/fail.png",
+        
+        "x": 300,
+        "y": 720,
+        "scale": 1.1,
+        "rotation": 0
     },
-    {
+    "king.png": {
         "name": "King",
-        "path": "assets/3d-cards/king.png"
+        "path": "assets/3d-cards/king.png",
+        
+        "x": 500,
+        "y": 100,
+        "scale": 1,
+        "rotation": 250
     },
-    {
+    "queen.png" : {
         "name": "Queen",
-        "path": "assets/3d-cards/queen.png"
+        "path": "assets/3d-cards/queen.png",
+        
+        "x": 1000,
+        "y": 30,
+        "scale": 1,
+        "rotation": 0
     },
-    {
+    "jack.png": {
         "name": "Jack",
-        "path": "assets/3d-cards/jack.png"
+        "path": "assets/3d-cards/jack.png",
+        
+        "x": 600,
+        "y": 20,
+        "scale": 1,
+        "rotation": 0
     },
-    {
+    "mad.png":{
         "name": "Mad",
-        "path": "assets/3d-cards/mad.png"
+        "path": "assets/3d-cards/mad.png",
+        
+        "x": 1200,
+        "y": 800,
+        "scale": 1,
+        "rotation": 0
     },
-    {
+    "pyro.png":{
         "name": "Pyro",
-        "path": "assets/3d-cards/pyro.png"
+        "path": "assets/3d-cards/pyro.png",
+        
+        "x": 300,
+        "y": 300,
+        "scale": 1,
+        "rotation": 0
     },
-    {
+    "rorschach.png": {
         "name": "Rorschach",
-        "path": "assets/3d-cards/rorschach.png"
+        "path": "assets/3d-cards/rorschach.png",
+        
+        "x": 1500,
+        "y": 625,
+        "scale": 1,
+        "rotation": 0
     }
-]
+}

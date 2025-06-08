@@ -9,7 +9,7 @@
 	let logo_element: HTMLImageElement;
 	let small_logo_element: HTMLImageElement;
 
-	import { PlaneGeometry, WebGLRenderer } from "three";
+	import { KeyframeTrack, Path, PlaneGeometry, WebGLRenderer } from "three";
 	import { onMount } from "svelte";
 
 	let card_renderer: WebGLRenderer;
@@ -19,6 +19,22 @@
 			alpha: true,
 		});
 	});
+
+	import parallax_cards_settings from "$lib/assets/parallax_cards/parallax_cards.json";
+
+	let parallax_cards = Object.entries(import.meta.glob(
+		"$lib/assets/parallax_cards/*.png",
+		{ eager: true }
+	)).map(([path, module]) => {
+		const cardName = path.split('/').pop() || 'default';
+		return {
+			name: cardName,
+			path: path,
+			settings: parallax_cards_settings[cardName as keyof typeof parallax_cards_settings]
+		};
+	});
+
+	console.log("parallax_cards", parallax_cards);
 
 	extend({ PlaneGeometry });
 </script>
@@ -52,6 +68,20 @@
 		<!-- <Canvas dpr={2}>
 			<Card_Scene />
 		</Canvas> -->
+
+		<!-- parallax card images -->
+		<div
+			class="relative top-0 left-0 w-screen h-screen overflow-hidden">
+			{#each parallax_cards as card}
+			<!-- svelte-ignore -->
+			<img
+				src={card.path}
+				alt={card.name}
+				class="absolute"
+				style="transform: translate(-50%, -50%) translateX({card.settings.x}px) translateY({card.settings.y}px) scale({card.settings.scale}) rotate({card.settings.rotation}deg);"
+				/>
+			{/each}
+		</div>
 	</div>
 	<!-- add  a scroll area for the canvas to run its animation or whatever -->
 	<div class="w-screen h-1/2 overflow-y-scroll overflow-x-hidden">
