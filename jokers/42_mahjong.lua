@@ -14,10 +14,10 @@ SMODS.Joker {
   end,
   calculate = function(self, card, context)
     if context.before and (#context.full_hand == 2 or #context.full_hand == 4) then
-      less_than_count = 0
+      local less_than_count = 0
 
       for i = 1, #context.full_hand do
-        this_card = context.full_hand[i]
+        local this_card = context.full_hand[i]
 
         if this_card.config.center == G.P_CENTERS.m_stone then
           -- Stone cards should not count as either higher or less than a number.

@@ -16,8 +16,6 @@ SMODS.Joker {
   end,
   calculate = function(self, card, context)
     if context.individual and context.cardarea == G.play then
-      message = nil
-
       if not context.other_card.debuff then
         if context.other_card.config.center == G.P_CENTERS.m_gold then
           return {

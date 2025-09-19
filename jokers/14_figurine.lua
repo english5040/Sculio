@@ -14,8 +14,9 @@ SMODS.Joker {
   end,
   calculate = function(self, card, context)
     if context.cardarea == G.jokers and context.selling_card and context.card ~= card and not context.blueprint then
-      sold_joker = context.card
-      message = nil
+      local sold_joker = context.card
+      local message = nil
+      local gain
 
       if not sold_joker.debuff and sold_joker.edition then
         if sold_joker.edition.type == 'foil' then
