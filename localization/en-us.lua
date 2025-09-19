@@ -139,6 +139,8 @@ return {
         text = {
           'All cards are treated',
           'like {C:attention}Wild Cards{}'
+          -- TODO inaccurate text: for example, Extra Credit's Werewolf would not work
+          -- (should be "cards have all suits", cards aren't actually wild)
         },
       }, 
       -- 12. Crime Scene
