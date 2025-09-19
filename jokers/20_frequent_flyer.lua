@@ -12,6 +12,8 @@ SMODS.Joker {
   loc_vars = function(self, info_queue, card)
     return { vars = { card.ability.extra.money_gain, card.ability.extra.mult, card.ability.extra.mult_gain, card.ability.extra.spend_per_gain, card.ability.extra.spent_since_gain } }
   end,
+  -- NOTE could look at instances of inc_career_stat('c_shop_dollars_spent', ...)
+  -- to accurately determine how much was spent
   calculate = function(self, card, context)
     rerolls_were_free = rerolls_are_free or G.GAME.current_round.reroll_cost == 0
 
