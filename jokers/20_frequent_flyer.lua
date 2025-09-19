@@ -15,7 +15,7 @@ SMODS.Joker {
   calculate = function(self, card, context)
     rerolls_were_free = rerolls_are_free or G.GAME.current_round.reroll_cost == 0
 
-    if (context.buying_card or context.open_booster or context.reroll_shop) and not context.blueprint then
+    if (context.buying_card or context.open_booster or context.reroll_shop) and not context.blueprint and context.card ~= card then
       if context.buying_card or context.open_booster then
         card.ability.extra.spent_since_gain = card.ability.extra.spent_since_gain + context.card.cost
       elseif context.reroll_shop then
