@@ -15,8 +15,7 @@ SMODS.Joker {
   end,
   calculate = function(self, card, context)
     if context.before and not context.blueprint then
-      math.randomseed(pseudorandom('impossible_stairs'))
-      add = math.random(card.ability.extra.mult_add_min, card.ability.extra.mult_add_max)
+      local add = pseudorandom('impossible_stairs', card.ability.extra.mult_add_min, card.ability.extra.mult_add_max)
       card.ability.extra.mult = card.ability.extra.mult + add
 
       if card.ability.extra.mult <= card.ability.extra.mult_min then

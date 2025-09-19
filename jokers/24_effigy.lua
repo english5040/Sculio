@@ -22,8 +22,7 @@ SMODS.Joker {
       end
 
       if #other_jokers > 0 and not card.ability.extra.random_joker then
-        math.randomseed(pseudorandom('scheming_idol'))
-        card.ability.extra.random_joker = other_jokers[math.random(1, #other_jokers)]
+        card.ability.extra.random_joker = other_jokers[pseudorandom('scheming_idol', 1, #other_jokers)]
       end
     end
 
