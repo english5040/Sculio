@@ -158,9 +158,9 @@ return {
       j_Sculio_cutout = {
         name = 'Joker Cutout',
         text = {
-          '{X:red,C:white} X#1# {} Mult for each',
+          '{X:red,C:white}X#1#{} Mult for each',
           '{C:attention}other{} occupied {C:attention}Joker{} slot',
-          '{C:inactive}(Currently {X:red,C:white} X#2# {C:inactive} Mult)',
+          '{C:inactive}(Currently {X:red,C:white}X#2#{C:inactive} Mult)',
         },
       }, 
       -- 14. Figurine
@@ -198,7 +198,7 @@ return {
           'When {C:attention}Blind{} is selected,',
           'convert Joker to the right',
           'into another Joker',
-          'Joker of equal {C:attention}rarity{}'
+          'of equal {C:attention}rarity{}'
         }
       },
       -- 18. Chicken Coupon
