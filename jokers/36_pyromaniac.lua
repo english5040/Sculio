@@ -39,14 +39,17 @@ SMODS.Joker {
             level_up_hand(context.blueprint_card or card, text, nil, 1)
           end
 
-          burn_hand = true -- BUG: burn_hand is global, will conflict with other
-          -- pyromaniacs
+          card.ability.extra.burn_hand = true
         end
       end
     end
 
-    if context.destroying_card and not context.blueprint and burn_hand then
+    if context.destroying_card and not context.blueprint and card.ability.extra.burn_hand then
       return { remove = true }
+    end
+
+    if context.after then
+      card.ability.extra.burn_hand = nil
     end
   end
 }
