@@ -263,7 +263,10 @@ return {
         name = 'Effigy',
         text = {
           'Copies ability of a',
-          '{C:attention}random Joker{}'
+          '{C:attention}random Joker{}',
+          -- TODO During played hand only, should clarify description
+          -- Also will behave weirdly with jokers that
+          -- do stuff during context.before/after
         },
       }, 
       -- 25. Bad Trip
