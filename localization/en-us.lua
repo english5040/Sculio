@@ -12,6 +12,7 @@ return {
           '{C:money}crmykybord{}: Sprite Artist',
           '{C:money}BrandonE{}: Developer',
           '{C:money}chily{}: Joker Ideas + Balancing',
+          '{C:money}Marffe{}: Ideas + Loc files for translation',
           ' ',
           '{C:attention}Special Thanks (Joker Ideas):{}',
           '{C:inactive}u/Spicy_burritos (Dunce Artwork + Concept), u/The_Math_Hatter,',
