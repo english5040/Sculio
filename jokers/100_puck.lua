@@ -10,6 +10,7 @@ SMODS.Joker {
   soul_pos = { x = 9, y = 1 },
   cost = 20,
   blueprint_compat = true,
+  perishable_compat = false,
   loc_vars = function(self, info_queue, card)
     return { vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.x_mult, card.ability.extra.bonus_mult * 100 } }
   end,
